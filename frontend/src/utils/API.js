@@ -89,7 +89,7 @@ class API {
 }
 
 const api = new API({
-    baseURL: 'api.genossek.mesto.nomoredomains.xyz',
+    baseURL: 'http://api.genossek.mesto.nomoredomains.xyz/',
     headers: {
         authorization: '2bc76956-8c18-424e-a75e-aff99086882b',
         'Content-Type': 'application/json'
