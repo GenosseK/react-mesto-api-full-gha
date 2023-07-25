@@ -91,7 +91,6 @@ class API {
 const api = new API({
     baseURL: 'http://api.genossek.mesto.nomoredomains.xyz',
     headers: {
-        Accept: "application/json",
         "Content-Type": "application/json",
     }
 })
