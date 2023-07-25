@@ -1,0 +1,11 @@
+.header__hamburger-bar {
+    width: 26px;
+    height: 3px;
+    background-color: #FFFFFF;
+    margin: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.header__hamburger-bar:nth-child(2) {
+    margin: 3px 0;
+}
