@@ -89,7 +89,7 @@ class API {
 }
 
 const api = new API({
-    baseURL: 'https://mesto.nomoreparties.co/v1/cohort-64',
+    baseURL: 'api.genossek.mesto.nomoredomains.xyz',
     headers: {
         authorization: '2bc76956-8c18-424e-a75e-aff99086882b',
         'Content-Type': 'application/json'
