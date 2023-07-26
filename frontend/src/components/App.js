@@ -185,7 +185,7 @@ function App() {
       auth
         .checkToken(jwt)
         .then((res) => {
-          setUserEmail(res.data.email);
+          setUserEmail(res.email);
           setloggedIn(true);
           navigate("/");
         })
@@ -217,7 +217,7 @@ function App() {
     auth
       .register(password, email)
       .then((res) => {
-        if (res.data.email) {
+        if (res.email) {
           setRegistrated(true);
           navigate("/sign-in");
         }

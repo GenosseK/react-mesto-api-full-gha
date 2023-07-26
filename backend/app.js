@@ -10,7 +10,6 @@ const router = require('./routes');
 const errorHandler = require('./middlewares/errorHandler');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
 const { PORT, MONGO_DB } = require('./utils/constant');
-const { CORS_OPTIONS } = require('./middlewares/cors');
 
 mongoose.connect(MONGO_DB);
 
@@ -18,11 +17,11 @@ mongoose.connect(MONGO_DB);
 
 const app = express();
 
-app.use(cors(CORS_OPTIONS));
-
 app.use(helmet());
 
 app.use(express.json());
+
+app.use(cors());
 
 app.use(requestLogger);
 
