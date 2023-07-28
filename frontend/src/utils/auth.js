@@ -1,4 +1,4 @@
-export const BASE_URL = 'api.genossek.mesto.nomoredomains.xyz';
+export const BASE_URL = 'https://api.genossek.mesto.nomoredomains.xyz';
 
 const handleResponseStatus = (response) => {
     if (response.ok) {

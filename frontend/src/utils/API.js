@@ -89,7 +89,7 @@ class API {
 }
 
 const api = new API({
-    baseURL: 'api.genossek.mesto.nomoredomains.xyz',
+    baseURL: 'https://api.genossek.mesto.nomoredomains.xyz',
     headers: {
         Authorization: `Bearer ${localStorage.getItem('jwt')}`,
         "Content-Type": "application/json",

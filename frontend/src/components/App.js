@@ -93,15 +93,45 @@ function App() {
     }
   }
 
+  // Checking Token
+  function checkToken() {
+    const jwt = localStorage.getItem("jwt");
+
+    if (jwt) {
+      auth
+        .checkToken(jwt)
+        .then((res) => {
+          setUserEmail(res.email);
+          setloggedIn(true);
+          navigate("/");
+        })
+        .catch((error) => {
+          console.log(`Error: ${error}`);
+        })
+        .finally(() => {
+          setIsLoadingToken(false);
+        });
+    } else {
+      navigate("/sign-in");
+      setIsLoadingToken(false);
+    }
+  }
+
+  useEffect(() => {
+    checkToken();
+  }, []);
+
   // Getting Users Data
   useEffect(() => {
+    if (loggedIn) {
     Promise.all([api.getUserInfo(), api.getInitialCards()])
       .then(([data, cards]) => {
         setCurrentUser(data);
         setCards(cards);
       })
       .catch((err) => console.log(err));
-  }, []);
+    }
+  }, [loggedIn]);
 
   // Card Deletion
   function handleCardDelete(card) {
@@ -176,34 +206,6 @@ function App() {
         setIsLoading(false);
       });
   }
-
-  // Checking Token
-  function checkToken() {
-    const jwt = localStorage.getItem("jwt");
-
-    if (jwt) {
-      auth
-        .checkToken(jwt)
-        .then((res) => {
-          setUserEmail(res.email);
-          setloggedIn(true);
-          navigate("/");
-        })
-        .catch((error) => {
-          console.log(`Error: ${error}`);
-        })
-        .finally(() => {
-          setIsLoadingToken(false);
-        });
-    } else {
-      navigate("/sign-in");
-      setIsLoadingToken(false);
-    }
-  }
-
-  useEffect(() => {
-    checkToken();
-  }, []);
 
   const [authData, setAuthData] = useState({
     password: "",
