@@ -5,12 +5,12 @@
   
 Пожалуйста, прикрепите в это описание ссылку на сайт, размещенный на Яндекс.Облаке.
 
-Адрес репозитория: https://github.com/...
+Адрес репозитория: https://github.com/GenosseK/react-mesto-api-full-gha
 
 ## Ссылки на проект
 
-IP-адрес x.x.x.x
+IP-адрес 158.160.27.172
 
-Frontend https://...
+Frontend https://genossek.mesto.nomoredomains.xyz
 
-Backend https://...
+Backend https://api.genossek.mesto.nomoredomains.xyz
