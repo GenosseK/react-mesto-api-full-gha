@@ -9,7 +9,7 @@
 
 ## Ссылки на проект
 
-IP-адрес 158.160.27.172
+IP 158.160.27.172
 
 Frontend https://genossek.mesto.nomoredomains.xyz
 
