@@ -15,14 +15,20 @@ class API {
     getUserInfo() {
         return fetch(`${this._baseURL}/users/me`, {
             method: 'GET',
-            headers: this._headers
+            headers: {
+                ...this._headers,
+                Authorization: `Bearer ${localStorage.getItem('jwt')}`,
+            }
         }).then(this._handleResponseStatus);
     }
 
     editUserInfo(data) {
         return fetch(`${this._baseURL}/users/me`, {
             method: 'PATCH',
-            headers: this._headers,
+            headers: {
+                ...this._headers,
+                Authorization: `Bearer ${localStorage.getItem('jwt')}`,
+            },
             body: JSON.stringify({
                 name: data.name,
                 about: data.about
@@ -33,7 +39,10 @@ class API {
     getInitialCards() {
         return fetch(`${this._baseURL}/cards`, {
             method: 'GET',
-            headers: this._headers,
+            headers: {
+                ...this._headers,
+                Authorization: `Bearer ${localStorage.getItem('jwt')}`,
+            }
         })
             .then(this._handleResponseStatus)
     }
@@ -41,7 +50,10 @@ class API {
     addCard(data) {
         return fetch(`${this._baseURL}/cards`, {
             method: 'POST',
-            headers: this._headers,
+            headers: {
+                ...this._headers,
+                Authorization: `Bearer ${localStorage.getItem('jwt')}`,
+            },
             body: JSON.stringify({
                 name: data.name,
                 link: data.link
@@ -53,7 +65,10 @@ class API {
     deleteCard(cardID) {
         return fetch(`${this._baseURL}/cards/${cardID}`, {
             method: 'DELETE',
-            headers: this._headers,
+            headers: {
+                ...this._headers,
+                Authorization: `Bearer ${localStorage.getItem('jwt')}`,
+            }
         })
             .then(this._handleResponseStatus)
     }
@@ -62,14 +77,20 @@ class API {
         if (isLiked) {
             return fetch(`${this._baseURL}/cards/${cardID}/likes`, {
                 method: 'DELETE',
-                headers: this._headers,
+                headers: {
+                    ...this._headers,
+                    Authorization: `Bearer ${localStorage.getItem('jwt')}`,
+                }
             })
                 .then(this._handleResponseStatus)
         }
         else {
             return fetch(`${this._baseURL}/cards/${cardID}/likes`, {
                 method: 'PUT',
-                headers: this._headers,
+                headers: {
+                    ...this._headers,
+                    Authorization: `Bearer ${localStorage.getItem('jwt')}`,
+                }
             })
                 .then(this._handleResponseStatus)
         }
@@ -78,7 +99,10 @@ class API {
     changeAvatar(data) {
         return fetch(`${this._baseURL}/users/me/avatar`, {
             method: 'PATCH',
-            headers: this._headers,
+            headers: {
+                ...this._headers,
+                Authorization: `Bearer ${localStorage.getItem('jwt')}`,
+            },
             body: JSON.stringify({
                 avatar: data.avatar
             }),
@@ -91,7 +115,6 @@ class API {
 const api = new API({
     baseURL: 'https://api.genossek.mesto.nomoredomains.xyz',
     headers: {
-        Authorization: `Bearer ${localStorage.getItem('jwt')}`,
         "Content-Type": "application/json",
     }
 })
