@@ -39,13 +39,13 @@
 ## Инструкция по запуску
 
 1. Создайте папку и перейдите в неё:
-   ```bash cd <имя_папки> ```
+   ``` cd <имя_папки> ```
 2. Клонируйте репозиторий:
-   ```bash git clone https://github.com/GenosseK/react-mesto-api-full-gha ```
+   ``` git clone https://github.com/GenosseK/react-mesto-api-full-gha ```
 3. Установите все зависимости:
-   ```bash npm install ```
+   ``` npm install ```
 4. Запустите проект:
-  ```bash npm start ```
+  ``` npm start ```
 
 ### Ссылки на проект
 
